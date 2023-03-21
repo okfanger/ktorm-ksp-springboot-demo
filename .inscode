@@ -1,4 +1,5 @@
-run = "cowsay 欢迎来到 InsCode"
+run = "java -classpath .:target/dependency/* Main"
+entrypoint = "Main.java"
 
 [nix]
 channel = "stable-22_11"
