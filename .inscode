@@ -1,5 +1,1 @@
-run = "java -classpath .:target/dependency/* Main"
-entrypoint = "Main.java"
-
-[nix]
-channel = "stable-22_11"
+run = "java Main.java"
