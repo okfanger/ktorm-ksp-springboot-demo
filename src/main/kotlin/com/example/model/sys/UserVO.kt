@@ -1,5 +1,6 @@
 package com.example.model.sys
 
+import com.example.common.Need
 import com.example.model.base.BaseJavaEntity
 import java.time.LocalDateTime
 
@@ -11,7 +12,26 @@ data class UserVO(
     override var createAt: LocalDateTime,
     override var updateAt: LocalDateTime,
 ) : BaseJavaEntity() {
-    fun hasPermission(permissionName: String): Boolean {
+    fun hasPermission(need: Need): Boolean {
+        with(need) {
+            if (allOf.isNotEmpty()) {
+                for (it in allOf) {
+                    if (!hasPermission(it))
+                        return false
+                }
+                return true
+            } else if (anyOf.isNotEmpty()) {
+                for (it in anyOf) {
+                    if (hasPermission(it))
+                        return true
+                }
+                return false
+            } else {
+                return false
+            }
+        }
+    }
+    private fun hasPermission(permissionName: String): Boolean {
         return roles.any { roleIt ->
             roleIt.permissions.any { it.name == permissionName }
         }

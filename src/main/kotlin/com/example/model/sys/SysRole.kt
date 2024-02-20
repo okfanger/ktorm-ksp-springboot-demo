@@ -9,7 +9,7 @@ import org.ktorm.ksp.api.Table
 interface SysRole : BaseEntity<SysRole> {
     @PrimaryKey
     var id: Long
-    var roleName: String
+    var name: String
 
     companion object : Entity.Factory<SysRole>()
 }

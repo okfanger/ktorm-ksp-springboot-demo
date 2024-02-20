@@ -20,7 +20,3 @@ data class ApiRes<T>(
         }
     }
 }
-
-fun <T> T.okk(): ApiRes<T> {
-    return ApiRes.ok(this)
-}

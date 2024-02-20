@@ -6,5 +6,6 @@ enum class BizCode(val code: Int, val msg: String) {
     PWD_WRONG(40102, "密码错误"),
     USER_EXIST(40103, "用户已存在"),
     NO_AUTH(40104, "未登录"),
+    ACCESS_DENIED(40301, "权限不足"),
     SYSTEM_ERROR(50000, "系统错误"),
 }
