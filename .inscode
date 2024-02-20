@@ -1,5 +1,5 @@
 run = "javac Main.java && java Main"
-language = "java"
+language = "kotlin"
 
 [debugger]
 program = "Main"
