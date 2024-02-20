@@ -1,0 +1,1 @@
+rootProject.name = "Ktorm-Ksp-SpringBoot-Demo"
